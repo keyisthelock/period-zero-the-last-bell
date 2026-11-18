@@ -1,0 +1,23 @@
+{
+  "name": "period-zero-the-last-bell",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "PERIOD ZERO: THE LAST BELL - first-person school horror escape game (Three.js + Vite)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "node scripts/patch-esbuild-wasm.cjs"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.11"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@4.27.4",
+    "esbuild": "npm:esbuild-wasm@0.21.5"
+  }
+}
