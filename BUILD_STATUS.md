@@ -29,7 +29,7 @@
 4. `npm run build` passes. The output is in `dist/`: one JS file of about 836 kB (224 kB gzipped).
 
 ## Known issues and caveats
-- **Toolchain workaround:** on the original machine, Windows Application Control blocks the native esbuild and Rollup binaries. `package.json` therefore overrides them with `esbuild-wasm` and `@rollup/wasm-node`. A postinstall script (`scripts/patch-esbuild-wasm.cjs`) also works around an OpenSSL entropy error in Node 26. On a normal machine you can delete the `overrides` block and the `postinstall` script to get the faster native tools.
+- **Current toolchain:** use `npm ci` and the locked Vite 6 toolchain. The standard esbuild and Rollup binaries built successfully on Windows with Node.js 26. The former WASM overrides and entropy patch are historical. The source of that workaround remains in `scripts/patch-esbuild-wasm.cjs`.
 - **Not tested by hand:** the full playthrough was checked by script only, not with real mouse and keyboard. Interaction distance, prompt targeting on small props (the floor book in chapter 3, the slip on the desk), and collision snagging around desk clusters need a manual pass.
 - **Exposure** was tuned from screenshots. The corridor before power is restored is intentionally near-black, and players need to know to press F.
 - The headmaster and Mira figures are stylised primitive silhouettes, not rigged models.
